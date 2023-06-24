@@ -1,0 +1,13 @@
+EstudoFDP, 8
+Projeto de Arquitetura, 12
+Planejamento de Atrações, 14
+Infraestrutura, 10
+Tematização e Decoração, 8
+Construção, 24
+Instalação de Atrações, 16
+Testes e Ajustes, 6
+Marketing e Lançamento, 4
+Requisitos Regulatórios, 4
+Viabilidade Financeira, 4
+Coleta de Dados, 2
+Pesquisa de Mercado, 6
