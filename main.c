@@ -7,10 +7,9 @@ typedef struct {
 } Task;
 
 int main() {
-    // Definir a unidade de tempo desejada
+    // timeUnite (semana)
     const char* timeUnit = "/s";
 
-    // Abrir o arquivo de tarefas
     FILE* file = fopen("tarefas.txt", "r");
     if (file == NULL) {
         printf("Erro ao abrir o arquivo.\n");
@@ -24,10 +23,8 @@ int main() {
         numTasks++;
     }
 
-    // Voltar para o início do arquivo
     rewind(file);
 
-    // Criar o array de tarefas dinamicamente
     Task* tasks = (Task*)malloc(numTasks * sizeof(Task));
     if (tasks == NULL) {
         printf("Erro ao alocar memória.\n");
@@ -45,10 +42,8 @@ int main() {
         i++;
     }
 
-    // Fechar o arquivo
     fclose(file);
 
-    // Matriz de adjacência para representar as dependências
     int dependencies[][13] = {
         {0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
         {0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0},
@@ -65,7 +60,7 @@ int main() {
         {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
     };
 
-    // Cálculo das datas de início mais cedo (ES)
+    // Cálculo (ES)
     int ES[13] = {0};
     for (int i = 1; i < numTasks; i++) {
         ES[i] = 0;
@@ -76,7 +71,7 @@ int main() {
         }
     }
 
-    // Cálculo das datas de término mais cedo (EF)
+    // Cálculo (EF)
     int EF[13];
     for (int i = 0; i < numTasks; i++) {
         EF[i] = ES[i] + tasks[i].duration;
